@@ -1,35 +1,42 @@
-USE EXERCICIO1P2;
+USE Rental;
 GO
 
-SELECT * FROM Empresa;
-SELECT * FROM Marca;
-SELECT * FROM Modelo;
-SELECT * FROM Veiculo;
-SELECT * FROM Cliente;
-
-INSERT INTO Empresa(NomeEmpresa)
-VALUES ('Localiza')
+INSERT INTO Empresas(NomeEmpresa)
+VALUES      ('Localiza');
 GO
 
-INSERT INTO Marca(nomeMarca)
-VALUES ('Audi'),
-       ('Ferrari'),
-	   ('Volkswagen')
+INSERT INTO Marcas(NomeMarca)
+VALUES			  ('Audi'),
+				 ('Ferrari'),
+				 ('Volkswagen');
 GO
 
-INSERT INTO Modelo(idMarca,NomeModelo,AnoLançamento)
-VALUES  ('1','Audi R8','1991'),
-        ('2','Ferrari F8','2020'),
-	    ('3','T-cross','2019')
+INSERT INTO Modelos (Descricao, IdMarca)
+VALUES			    ('Audi R8', 1),
+				   ('Ferrari F8', 2),
+				   ('T-cross', 3);
 GO
 
-INSERT INTO Veiculo(idEmpresa,idModelo,CorVeiculo)
-VALUES ('1','1','Vermelho'),
-       ('1','2','Laranja'),
-	   ('1','3','Prata')
+INSERT INTO Veiculos (IdModelo, Placa, IdEmpresa)
+VALUES				 (1,'FFD2019', 1),
+					(2,'FFD2020', 1),
+					(3,'FFD2021', 1);
 GO
 
-INSERT INTO Cliente(nomeCliente,Cpf)
-VALUES ('Guilherme','45626492836'),
-       ('Nanny','58865928366')
+INSERT INTO Clientes(Nome,Sobrenome, CPF)
+VALUES				('Guilherme','Cardoso', '45626492836'),
+				   ('Nanny','Senai', '88888888888');
 GO
+
+INSERT INTO Alugueis (IdCliente, IdVeiculo, DataInicio, DataFim)
+VALUES				 (1, 13, '2021-10-01', '2021-10-02'),
+					(2, 14, '2021-10-02', '2021-10-03'),
+					(2, 15, '2021-10-03', '2021-10-04');
+GO
+
+SELECT * FROM Empresas;
+SELECT * FROM Marcas;
+SELECT * FROM Modelos;
+SELECT * FROM Veiculos;
+SELECT * FROM Clientes;
+SELECT * FROM Alugueis;
